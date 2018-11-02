@@ -2,13 +2,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.version.num.test</groupId>
   <artifactId>versionNumTest</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>2</version>
   <name>Version Number Test</name>
   
   <scm>
     <connection>scm:git:https://github.com/wackattack22/versionNumTest.git</connection>
     <developerConnection>scm:git:https://github.com/wackattack22/versionNumTest.git</developerConnection>
-    <url>https://github.com/wackattack22/versionNumTest.git</url>
+    <url>https://github.com/wackattack22/versionNumTest</url>
+    <tag>2</tag>
   </scm>
   
   	<parent>
@@ -41,6 +42,16 @@
 	          <connectionType>developerConnection</connectionType>
 	        </configuration>
       	</plugin>
+      	<plugin>
+		   <groupId>org.apache.maven.plugins</groupId>
+		   <artifactId>maven-release-plugin</artifactId>
+		   <version>2.5.3</version>
+		   <configuration>
+		      <tagNameFormat>v@{project.version}</tagNameFormat>
+		      <autoVersionSubmodules>true</autoVersionSubmodules>
+		      <releaseProfiles>releases</releaseProfiles>
+		   </configuration>
+		</plugin>
     </plugins>
 </build>
   
